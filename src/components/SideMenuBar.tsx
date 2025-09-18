@@ -38,7 +38,7 @@ const SideMenuBar = () => {
                                           key={index}
                                           to={item.href}
                                           onClick={() => setIsSelected(index)}
-                                          className={`flex items-center px-10 py-5 border-b-1 border-white/5 ${isSelected === index ? 'bg-gradient-to-l from-white/15 to-transparent text-white border-r-5 border-r-orange-600' : 'text-white/50'}`}
+                                          className={`flex items-center pl-10 py-5 border-b-1 border-white/5 ${isSelected === index ? 'bg-gradient-to-l from-white/15 to-transparent text-white border-r-5 border-r-orange-600' : 'text-white/50'}`}
                                     >
                                           <div className="flex items-center justify-center">{item.icon}</div>
                                           <h2 className="ml-3">
@@ -50,10 +50,10 @@ const SideMenuBar = () => {
                   </SidebarContent>
                   <SidebarFooter className="bg-blue-900">
                         <NavLink to="/settings"
-                              className={`flex items-center gap-3 px-10 py-5 border-t-1 border-white/15 text-white `}
+                              className={`flex items-center gap-3 pl-10 py-5 border-t-1 border-white/15 text-white `}
                         ><MdSettings size={24} /> Settings</NavLink>
                         <NavLink to="/auth"
-                              className={`flex items-center gap-3 px-10 py-5 text-white mb-8`}
+                              className={`flex items-center gap-3 pl-10 py-5 text-white mb-8`}
                         ><MdLogout size={24} /> Settings</NavLink>
                   </SidebarFooter>
             </Sidebar>

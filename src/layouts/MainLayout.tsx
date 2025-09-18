@@ -1,13 +1,14 @@
+import Header from '@/components/Header'
 import SideMenuBar from '@/components/SideMenuBar'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { SidebarProvider } from '@/components/ui/sidebar'
 import { Outlet } from 'react-router-dom'
 
 function MainLayout() {
     return (
-        <SidebarProvider>
+        <SidebarProvider className='w-screen'>
             <SideMenuBar />
-            <main>
-                <SidebarTrigger />
+            <main className='w-full bg-gray-100'>
+                <Header />
                 <Outlet />
             </main>
         </SidebarProvider>
