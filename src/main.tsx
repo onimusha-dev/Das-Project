@@ -19,21 +19,21 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <Navigate to='overview' replace /> },
-      { path: 'overview', element: <Overview/> },
+      { path: 'overview', element: <Overview /> },
       { path: 'resources', element: <Resources /> },
-      { path: 'feedbacks', element: <Feedbacks/> },
+      { path: 'feedbacks', element: <Feedbacks /> },
       { path: 'volunteers', element: <Volunteers /> },
       { path: 'settings', element: <Settings /> },
-      { path: 'user-directory', element: <UserDirectory />},
+      { path: 'user-directory', element: <UserDirectory /> },
       { path: 'analytics-and-reports', element: <AnalyticsAndReports /> },
-      { path: 'content-management', element: <ContentManagement /> },      
+      { path: 'content-management', element: <ContentManagement /> },
       { path: 'send-notification', element: <SendNotification /> },
     ]
   },
   {
     path: '/auth',
     element: <AuthLayout />,
-    children:[
+    children: [
       { index: true, element: <Navigate to='login' /> },
       { path: 'login', element: <h1>login</h1> },
       { path: 'register', element: <h1>register</h1> }
