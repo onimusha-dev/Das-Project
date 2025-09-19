@@ -12,10 +12,8 @@ import {
       MdSettings,
       MdLogout
 } from "react-icons/md";
-import { useState } from "react";
 
 const SideMenuBar = () => {
-      const [isSelected, setIsSelected] = useState<number>(0)
 
       return (
             <Sidebar>
@@ -33,12 +31,12 @@ const SideMenuBar = () => {
                                     { icon: <MdVolunteerActivism size={24} />, title: "Volunteers", href: "/volunteers" },
                                     { icon: <MdInsights size={24} />, title: "Analytics & Reports", href: "/analytics-and-reports" },
                                     { icon: <MdFeedback size={24} />, title: "Feedbacks", href: "/feedbacks" },
+
                               ].map((item, index: number) => (
                                     <NavLink
                                           key={index}
                                           to={item.href}
-                                          onClick={() => setIsSelected(index)}
-                                          className={`flex items-center pl-10 py-5 border-b-1 border-white/5 ${isSelected === index ? 'bg-gradient-to-l from-white/15 to-transparent text-white border-r-5 border-r-orange-600' : 'text-white/50'}`}
+                                          className={({ isActive }) => `flex items-center pl-10 py-5 border-b-1 border-white/5 transition-colors ease-in-out ${isActive ? 'bg-gradient-to-l from-white/15 to-transparent text-white border-r-5 border-r-orange-600 duration-500' : 'text-white/50 duration-150 hover:text-white/75'}`}
                                     >
                                           <div className="flex items-center justify-center">{item.icon}</div>
                                           <h2 className="ml-3">
@@ -50,10 +48,10 @@ const SideMenuBar = () => {
                   </SidebarContent>
                   <SidebarFooter className="bg-blue-900">
                         <NavLink to="/settings"
-                              className={`flex items-center gap-3 pl-10 py-5 border-t-1 border-white/15 text-white `}
+                              className={`flex items-center gap-3 pl-10 py-5 border-t-1 border-white/15 text-white hover:text-white/75 `}
                         ><MdSettings size={24} /> Settings</NavLink>
                         <NavLink to="/auth"
-                              className={`flex items-center gap-3 pl-10 py-5 text-white mb-8`}
+                              className={`flex items-center gap-3 pl-10 py-5 text-white hover:text-white/75 mb-8`}
                         ><MdLogout size={24} /> Settings</NavLink>
                   </SidebarFooter>
             </Sidebar>

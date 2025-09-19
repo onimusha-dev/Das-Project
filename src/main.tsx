@@ -13,6 +13,8 @@ import UserDirectory from './pages/UserDirectory'
 import AnalyticsAndReports from './pages/AnalyticsAndReports'
 import ContentManagement from './pages/ContentManagement'
 import SendNotification from './pages/SendNotification'
+import MainPage from './sections/contentManagement /MainPage'
+import ChildPages from './sections/contentManagement /ChildPages'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,14 @@ const router = createBrowserRouter([
       { path: 'settings', element: <Settings /> },
       { path: 'user-directory', element: <UserDirectory /> },
       { path: 'analytics-and-reports', element: <AnalyticsAndReports /> },
-      { path: 'content-management', element: <ContentManagement /> },
+      {
+        path: 'content-management',
+        element: <ContentManagement />,
+        children: [
+          {index: true, element: <MainPage />},
+          {path: 'childpage', element: <ChildPages />}
+        ]
+      },
       { path: 'send-notification', element: <SendNotification /> },
     ]
   },
