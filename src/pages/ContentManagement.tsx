@@ -6,9 +6,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { SlashIcon } from "lucide-react"
 import { NavLink, Outlet, useLocation } from "react-router-dom"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 const ContentManagement = () => {
   const currentPath: any = useLocation().pathname.split("/").pop()
@@ -35,9 +45,26 @@ const ContentManagement = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <Button className="bg-blue-900 py-7">
-          + Add New Banner
-        </Button>
+        <Sheet>
+          <SheetTrigger>
+            <Button className="bg-blue-900 hover:bg-blue-950 py-7">
+              + Add New Banner
+            </Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader className="p-10">
+              <SheetTitle className="text-2xl font-semibold">Add New Banner</SheetTitle>
+              <SheetDescription>
+                <form action="submit" className="select-none flex flex-col gap-3">
+                  <div>
+                    <label className="text-lg font-medium block my-3" htmlFor="name">Name *</label>
+                    <Input required type="text" id="name" name="name" placeholder="Enter the name" className="h-12 bg-blue-50 focus:outline-none focus:border-blue-600"></Input>
+                  </div>
+                </form>
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
       </div>
       <Outlet />
     </section>

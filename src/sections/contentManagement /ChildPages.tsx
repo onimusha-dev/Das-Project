@@ -57,35 +57,7 @@ const invoices = [
 const ChildPages = () => {
 
     return (
-        <section className="p-5 bg-white rounded-2xl shadow-xs border-1">
-            <Table>
-                <TableCaption>A list of your recent invoices.</TableCaption>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead className="w-24 border-x-1">no</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Method</TableHead>
-                        <TableHead className="text-right">Amount</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {invoices.map((invoice) => (
-                        <TableRow key={invoice.invoice}>
-                            <TableCell className="font-medium w-24 border-x-1">{invoice.invoice}</TableCell>
-                            <TableCell>{invoice.paymentStatus}</TableCell>
-                            <TableCell>{invoice.paymentMethod}</TableCell>
-                            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        <TableCell colSpan={3}>Total</TableCell>
-                        <TableCell className="text-right">$2,500.00</TableCell>
-                    </TableRow>
-                </TableFooter>
-            </Table>
-        </section>
+<>this is a taste lol</>
     )
 }
 
