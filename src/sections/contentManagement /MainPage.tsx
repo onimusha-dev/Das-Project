@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-
 const navItems = [
   { name: "HomePage Banners", path: "homepage-banners" },
   { name: "Our Partners", path: "our-partners" },
@@ -12,9 +11,12 @@ const navItems = [
 ];
 
 const MainPage = () => {
+
   return (
-    
     <div>
+      <h2 className="text-3xl font-medium pb-5">
+        Content Management
+      </h2>
       <ul>
         {navItems.map((item, index) => (
           <li key={index}>

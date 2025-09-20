@@ -22,6 +22,7 @@ import Gallery from './sections/contentManagement /Gallery'
 import AboutUs from './sections/contentManagement /AboutUs'
 import PrivacyPolicy from './sections/contentManagement /PrivacyPolicy'
 import OurImpact from './sections/contentManagement /OurImpact'
+import Error404 from './pages/Error404'
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
       { path: 'login', element: <h1>login</h1> },
       { path: 'register', element: <h1>register</h1> }
     ]
+  },
+  {
+    path: '*',
+    element: <Error404 />
   }
 ])
 
