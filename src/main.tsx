@@ -13,6 +13,16 @@ import UserDirectory from './pages/UserDirectory'
 import AnalyticsAndReports from './pages/AnalyticsAndReports'
 import ContentManagement from './pages/ContentManagement'
 import SendNotification from './pages/SendNotification'
+import MainPage from './sections/contentManagement /MainPage'
+import HomePageBanners from './sections/contentManagement /HomePageBanners'
+import OurPartners from './sections/contentManagement /OurPartners'
+import TeamMembers from './sections/contentManagement /TeamMembers'
+import TermsOfService from './sections/contentManagement /TermsOfService'
+import Gallery from './sections/contentManagement /Gallery'
+import AboutUs from './sections/contentManagement /AboutUs'
+import PrivacyPolicy from './sections/contentManagement /PrivacyPolicy'
+import OurImpact from './sections/contentManagement /OurImpact'
+import Error404 from './pages/Error404'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +36,49 @@ const router = createBrowserRouter([
       { path: 'settings', element: <Settings /> },
       { path: 'user-directory', element: <UserDirectory /> },
       { path: 'analytics-and-reports', element: <AnalyticsAndReports /> },
-      { path: 'content-management', element: <ContentManagement /> },
+      {
+        path: 'content-management',
+        element: <ContentManagement />,
+        children: [
+          { index: true, element: <MainPage /> },
+          {
+            children: [
+              {
+                path: "homepage-banners",
+                element: <HomePageBanners />
+              },
+              {
+                path: "our-partners",
+                element: <OurPartners />
+              },
+              {
+                path: "team-members",
+                element: <TeamMembers />
+              },
+              {
+                path: "gallery",
+                element: <Gallery />
+              },
+              {
+                path: "terms-of-service",
+                element: <TermsOfService />
+              },
+              {
+                path: "privacy-policy",
+                element: <PrivacyPolicy />
+              },
+              {
+                path: "about-us",
+                element: <AboutUs />
+              },
+              {
+                path: "our-impact",
+                element: <OurImpact />
+              }
+            ]
+          }
+        ]
+      },
       { path: 'send-notification', element: <SendNotification /> },
     ]
   },
@@ -38,6 +90,10 @@ const router = createBrowserRouter([
       { path: 'login', element: <h1>login</h1> },
       { path: 'register', element: <h1>register</h1> }
     ]
+  },
+  {
+    path: '*',
+    element: <Error404 />
   }
 ])
 

@@ -1,7 +1,10 @@
+import { Outlet } from "react-router-dom"
 
 const ContentManagement = () => {
   return (
-    <div>ContentManagement</div>
+    <section className="px-5 my-10">
+      <Outlet />
+    </section>
   )
 }
 

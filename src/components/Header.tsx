@@ -11,12 +11,12 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header className="flex flex-1 justify-between items-center bg-white shadow-xs">
-      <SidebarTrigger />
+      <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5"/>
       <div className="flex items-center gap-2 mr-10 p-3">
         <NavLink
           to={"/notifications"}
           className="relative pr-5 border-r-2 ">
-          <MdNotifications size={24} className="w-12 h-12 p-3 bg-black/5 hover:bg-black/10 rounded-full" />
+          <MdNotifications size={24} className="w-12 h-12 p-3 bg-black/5 hover:bg-black/10 rounded-2xl" />
           {true && <div className="absolute top-0 right-5 flex items-center justify-center w-5 h-5 rounded-full bg-orange-500 text-white">
             <p className="text-xs font-bold">{'6'}</p>
           </div>}
