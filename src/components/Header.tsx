@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex flex-1 justify-between items-center bg-white shadow-xs">
+    <header className="sticky top-0 z-50 flex flex-1 justify-between items-center bg-white shadow-xs">
       <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5"/>
       <div className="flex items-center gap-2 mr-10 p-3">
         <NavLink
