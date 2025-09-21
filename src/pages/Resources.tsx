@@ -7,25 +7,26 @@ const Resources = () => {
         Resources
       </h2>
       <ul className="flex">
-        {
-          [
-            { title: "Files", href: "files" },
-            { title: "Category", href: "categories" },
-          ]
-            .map((item, index: number) => (
-              <li className="mb-5">
-                <NavLink
-                  key={index}
-                  to={item.href}
-                  className={({ isActive }) => `flex font-medium items-center pr-5 py-3 transition-colors ease-in-out ${isActive ? 'text-blue-900 border-b-3 border-b-blue-900 duration-300' : 'text-black/50 hover:text-black/75 duration-150'}`}
-                >
-                  <h2 className="ml-3">
-                    {item.title}
-                  </h2>
-                </NavLink>
-              </li>
-            ))
-        }
+        <li className="mb-5">
+          <NavLink
+            to={'files'}
+            className={({ isActive }) => `flex font-medium items-center px-5 py-3 transition-colors ease-in-out ${isActive ? 'text-blue-900 border-b-3 border-b-blue-900 duration-300' : 'text-black/50 hover:text-black/75 duration-150'}`}
+          >
+            <h2 className="mx-3">
+              Files
+            </h2>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={'categories'}
+            className={({ isActive }) => `flex font-medium items-center py-3 transition-colors ease-in-out ${isActive ? 'text-blue-900 border-b-3 border-b-blue-900 duration-300' : 'text-black/50 hover:text-black/75 duration-150'}`}
+          >
+            <h2 className="mx-4">
+              category
+            </h2>
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </section>
