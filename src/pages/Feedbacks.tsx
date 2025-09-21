@@ -25,7 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { FilterIcon, SaudiRiyalIcon, SearchCheckIcon, SearchIcon } from "lucide-react"
+import { FilterIcon, SearchIcon } from "lucide-react"
 
 
 const tableData = [
@@ -223,7 +223,7 @@ const Feedbacks = () => {
             </PaginationItem>
           </PaginationContent>
         </Pagination>
-        
+
       </section>
     </section>
   )
