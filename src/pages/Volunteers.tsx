@@ -1,7 +1,12 @@
 
 const Volunteers = () => {
   return (
-    <div>Volunteers</div>
+    <section className="px-5 my-10">
+      <h2 className="text-3xl font-medium pb-5">
+        Volunteers
+      </h2>
+    </section>
+    
   )
 }
 

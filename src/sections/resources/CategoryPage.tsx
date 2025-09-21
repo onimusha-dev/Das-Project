@@ -6,15 +6,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -25,6 +16,16 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
 
 const tableData = [
   {
@@ -119,17 +120,15 @@ const tableData = [
   }
 ];
 
-const SendNotification = () => {
 
-  const tableHeadStyle = "p-4 text-lg font-medium border-x-1"
-  const tableCellStyle = "p-4 border-x-1"
+const CategoryPage = () => {
+
+  const tableHeadStyle = "p-4 text-lg font-medium border-1"
+  const tableCellStyle = "p-4 border-1"
 
   return (
-    <section className="px-5 my-10">
-      <div className="flex justify-between mb-5">
-        <h2 className="text-3xl font-medium pb-5">
-          Content Management
-        </h2>
+    <>
+      <div className="flex justify-end mb-5">
         <Sheet>
           <SheetTrigger>
             <Button className="bg-blue-900 hover:bg-blue-950 py-7">
@@ -153,14 +152,12 @@ const SendNotification = () => {
       </div>
 
       <section className="bg-white rounded-md shadow-xs border-1">
-        <Table>
+        <Table className="p">
           <TableHeader>
             <TableRow>
               <TableHead className={tableHeadStyle}>S. No</TableHead>
-              <TableHead className={tableHeadStyle}>Title</TableHead>
-              <TableHead className={tableHeadStyle}>Image</TableHead>
-              <TableHead className={tableHeadStyle}>Priority</TableHead>
-              <TableHead className={tableHeadStyle}>Published on</TableHead>
+              <TableHead className={tableHeadStyle}>Category Name</TableHead>
+              <TableHead className={tableHeadStyle}>Added On</TableHead>
               <TableHead className={tableHeadStyle}>Status</TableHead>
               <TableHead className={tableHeadStyle}>Action</TableHead>
             </TableRow>
@@ -172,13 +169,15 @@ const SendNotification = () => {
                 <TableCell className={tableCellStyle}>{tableData.title}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.image}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.publishedOn}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.status}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.action}</TableCell>
+                <TableCell className={tableCellStyle}>
+                  <button className="text-blue-700 underline hover:text-blue-900">Edit</button>
+                  <button className="text-red-700 underline hover:text-red-900 ml-10">Delete</button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
+
 
         {/* this is the pagination ill develop the logic later */}
 
@@ -208,8 +207,7 @@ const SendNotification = () => {
         </Pagination>
 
       </section>
-    </section>
+    </>
   )
 }
-
-export default SendNotification
+export default CategoryPage

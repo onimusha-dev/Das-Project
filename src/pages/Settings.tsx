@@ -2,7 +2,9 @@
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <section className="px-5 my-10">
+      settings
+    </section>
   )
 }
 

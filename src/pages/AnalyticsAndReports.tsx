@@ -2,7 +2,12 @@
 
 const AnalyticsAndReports = () => {
   return (
-    <div>AnalyticsAndReports</div>
+    <section className="px-5 my-10">
+      <h2 className="text-3xl font-medium pb-5">
+        Analytics & Reports
+      </h2>
+    </section>
+    
   )
 }
 

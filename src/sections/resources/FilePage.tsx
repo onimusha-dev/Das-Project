@@ -6,15 +6,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -25,8 +16,45 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
 
 const tableData = [
+  {
+    no: 8,
+    title: "Privacy Policy",
+    image: "/images/privacy.jpg",
+    priority: 3,
+    publishedOn: "2025-02-14",
+    status: "Published",
+    action: "Edit"
+  },
+  {
+    no: 9,
+    title: "About Us Section",
+    image: "/images/about.jpg",
+    priority: 2,
+    publishedOn: "2025-02-16",
+    status: "Draft",
+    action: "Edit"
+  },
+  {
+    no: 10,
+    title: "Impact Report",
+    image: "/images/impact.jpg",
+    priority: 1,
+    publishedOn: "2025-02-18",
+    status: "Published",
+    action: "Edit"
+  },
   {
     no: 1,
     title: "Homepage Banner 1",
@@ -90,46 +118,17 @@ const tableData = [
     status: "Published",
     action: "Edit"
   },
-  {
-    no: 8,
-    title: "Privacy Policy",
-    image: "/images/privacy.jpg",
-    priority: 3,
-    publishedOn: "2025-02-14",
-    status: "Published",
-    action: "Edit"
-  },
-  {
-    no: 9,
-    title: "About Us Section",
-    image: "/images/about.jpg",
-    priority: 2,
-    publishedOn: "2025-02-16",
-    status: "Draft",
-    action: "Edit"
-  },
-  {
-    no: 10,
-    title: "Impact Report",
-    image: "/images/impact.jpg",
-    priority: 1,
-    publishedOn: "2025-02-18",
-    status: "Published",
-    action: "Edit"
-  }
 ];
 
-const SendNotification = () => {
 
-  const tableHeadStyle = "p-4 text-lg font-medium border-x-1"
-  const tableCellStyle = "p-4 border-x-1"
+const FilePage = () => {
+
+  const tableHeadStyle = "p-4 text-lg font-medium border-1"
+  const tableCellStyle = "p-4 border-1"
 
   return (
-    <section className="px-5 my-10">
-      <div className="flex justify-between mb-5">
-        <h2 className="text-3xl font-medium pb-5">
-          Content Management
-        </h2>
+    <>
+      <div className="flex justify-end mb-5">
         <Sheet>
           <SheetTrigger>
             <Button className="bg-blue-900 hover:bg-blue-950 py-7">
@@ -158,23 +157,32 @@ const SendNotification = () => {
             <TableRow>
               <TableHead className={tableHeadStyle}>S. No</TableHead>
               <TableHead className={tableHeadStyle}>Title</TableHead>
-              <TableHead className={tableHeadStyle}>Image</TableHead>
-              <TableHead className={tableHeadStyle}>Priority</TableHead>
-              <TableHead className={tableHeadStyle}>Published on</TableHead>
+              <TableHead className={tableHeadStyle}>Category</TableHead>
+              <TableHead className={tableHeadStyle}>Featured</TableHead>
+              <TableHead className={tableHeadStyle}>Type</TableHead>
+              <TableHead className={tableHeadStyle}>File size</TableHead>
+              <TableHead className={tableHeadStyle}>Creation Date</TableHead>
               <TableHead className={tableHeadStyle}>Status</TableHead>
-              <TableHead className={tableHeadStyle}>Action</TableHead>
+              <TableHead className={tableHeadStyle}>App Visibility</TableHead>
+              <TableHead className={tableHeadStyle}>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {tableData.map((tableData) => (
               <TableRow key={tableData.no}>
                 <TableCell className={tableHeadStyle}>{tableData.no}</TableCell>
+                <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.title}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.image}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.publishedOn}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.status}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.action}</TableCell>
+                <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
+                <TableCell className={tableCellStyle}>
+                  <button className="text-blue-700 underline hover:text-blue-900">Edit</button>
+                  <button className="text-red-700 underline hover:text-red-900 ml-10">Delete</button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -207,9 +215,9 @@ const SendNotification = () => {
           </PaginationContent>
         </Pagination>
 
+
       </section>
-    </section>
+    </>
   )
 }
-
-export default SendNotification
+export default FilePage

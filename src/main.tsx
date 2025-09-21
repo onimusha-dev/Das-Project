@@ -23,6 +23,8 @@ import AboutUs from './sections/contentManagement /AboutUs'
 import PrivacyPolicy from './sections/contentManagement /PrivacyPolicy'
 import OurImpact from './sections/contentManagement /OurImpact'
 import Error404 from './pages/Error404'
+import FilePage from './sections/resources/FilePage'
+import CategoryPage from './sections/resources/CategoryPage'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,15 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to='overview' replace /> },
       { path: 'overview', element: <Overview /> },
-      { path: 'resources', element: <Resources /> },
+      {
+        path: 'resources',
+        element: <Resources />,
+        children: [
+          { index: true, element: <Navigate to='files' /> },
+          { path: 'files', element: <FilePage /> },
+          { path: 'categories', element: <CategoryPage /> }
+        ]
+      },
       { path: 'feedbacks', element: <Feedbacks /> },
       { path: 'volunteers', element: <Volunteers /> },
       { path: 'settings', element: <Settings /> },

@@ -175,7 +175,7 @@ const OurPartners = () => {
             </div>
 
             <section className="bg-white rounded-md shadow-xs border-1">
-                <Table className="p">
+                <Table>
                     <TableHeader>
                         <TableRow>
                             <TableHead className={tableHeadStyle}>S. No</TableHead>
