@@ -52,7 +52,7 @@ const SideMenuBar = () => {
                         ><MdSettings size={24} /> Settings</NavLink>
                         <NavLink to="/auth"
                               className={`flex items-center gap-3 pl-10 py-5 text-white hover:text-white/75 mb-8`}
-                        ><MdLogout size={24} /> Settings</NavLink>
+                        ><MdLogout size={24} /> Logout</NavLink>
                   </SidebarFooter>
             </Sidebar>
       )
