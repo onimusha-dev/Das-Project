@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import AuthLayout from './layouts/AuthLayout'
 import Overview from './pages/Overview'
 import Resources from './pages/Resources'
 import Feedbacks from './pages/Feedbacks'
@@ -25,6 +24,11 @@ import OurImpact from './sections/contentManagement /OurImpact'
 import Error404 from './pages/Error404'
 import FilePage from './sections/resources/FilePage'
 import CategoryPage from './sections/resources/CategoryPage'
+import ForgotPasswordPage from './pages/Auth/forgotPassword'
+import LoginPage from './pages/Auth/login'
+import ResetPasswordPage from './pages/Auth/resetPassword'
+import { AuthLayout } from './layouts/AuthLayout'
+import AuthPage from './pages/Auth/authenticator'
 
 const router = createBrowserRouter([
   {
@@ -93,12 +97,13 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/auth',
-    element: <AuthLayout />,
+    path: 'auth', element: <AuthLayout />,
     children: [
-      { index: true, element: <Navigate to='login' /> },
-      { path: 'login', element: <h1>login</h1> },
-      { path: 'register', element: <h1>register</h1> }
+      { index: true, element: <Navigate to='login' replace /> },
+      { path: 'login', element: <LoginPage /> },
+      { path: 'forgot-password', element: <ForgotPasswordPage /> },
+      { path: 'reset-password', element: <ResetPasswordPage /> },
+      { path: 'authentication', element: <AuthPage /> },
     ]
   },
   {

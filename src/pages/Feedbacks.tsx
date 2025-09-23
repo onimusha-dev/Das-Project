@@ -25,6 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import { FilterIcon, SearchIcon } from "lucide-react"
 
 
 const tableData = [
@@ -127,8 +128,21 @@ const Feedbacks = () => {
   const tableCellStyle = "p-4 border-1"
 
   return (
-    <>
-      <div className="flex justify-end mb-5">
+    <section className="px-5 my-10">
+      <div className="flex justify-between mb-5">
+        <h2 className="text-3xl font-medium pb-5">
+          Feedbacks
+        </h2>
+      </div>
+      <div className="flex items-center  justify-end mb-5">
+        <div className="relative">
+          <SearchIcon size={24} className="absolute top-3 left-3" />
+          <Input className="bg-blue-50 w-fit mr-3 pl-12 rounded-sm h-12 focus:outline-none py-0 border-blue-800 text-xl" type="text" placeholder="Search" />
+        </div>
+
+        <div className="flex items-center justify-center border-1 h-12 w-12 rounded-sm border-blue-900 bg-white text-blue-900 mr-3">
+          <FilterIcon size={24} />
+        </div>
         <Sheet>
           <SheetTrigger>
             <Button className="bg-blue-900 hover:bg-blue-950 py-7">
@@ -156,15 +170,11 @@ const Feedbacks = () => {
           <TableHeader>
             <TableRow>
               <TableHead className={tableHeadStyle}>S. No</TableHead>
-              <TableHead className={tableHeadStyle}>Title</TableHead>
-              <TableHead className={tableHeadStyle}>Category</TableHead>
-              <TableHead className={tableHeadStyle}>Featured</TableHead>
-              <TableHead className={tableHeadStyle}>Type</TableHead>
-              <TableHead className={tableHeadStyle}>File size</TableHead>
-              <TableHead className={tableHeadStyle}>Creation Date</TableHead>
-              <TableHead className={tableHeadStyle}>Status</TableHead>
-              <TableHead className={tableHeadStyle}>App Visibility</TableHead>
-              <TableHead className={tableHeadStyle}>Actions</TableHead>
+              <TableHead className={tableHeadStyle}>Nmae</TableHead>
+              <TableHead className={tableHeadStyle}>Email</TableHead>
+              <TableHead className={tableHeadStyle}>Deatils</TableHead>
+              <TableHead className={tableHeadStyle}>Rating</TableHead>
+              <TableHead className={tableHeadStyle}>Submitted on</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -172,17 +182,16 @@ const Feedbacks = () => {
               <TableRow key={tableData.no}>
                 <TableCell className={tableHeadStyle}>{tableData.no}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.title}</TableCell>
+                <TableCell className={tableCellStyle}>
+                  <div className="flex justify-between pr-5 items-center gap-3">
+                    <p className="">{tableData.title}</p>
+                    <button className="text-blue-700 underline hover:text-blue-900">Edit</button>
+                  </div>
+                </TableCell>
                 <TableCell className={tableCellStyle}>{tableData.image}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
                 <TableCell className={tableCellStyle}>{tableData.publishedOn}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.status}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.action}</TableCell>
-                <TableCell className={tableCellStyle}>{tableData.priority}</TableCell>
-                <TableCell className={tableCellStyle}>
-                  <button className="text-blue-700 underline hover:text-blue-900">Edit</button>
-                  <button className="text-red-700 underline hover:text-red-900 ml-10">Delete</button>
-                </TableCell>
+
               </TableRow>
             ))}
           </TableBody>
@@ -215,9 +224,8 @@ const Feedbacks = () => {
           </PaginationContent>
         </Pagination>
 
-
       </section>
-    </>
+    </section>
   )
 }
 export default Feedbacks
