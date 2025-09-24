@@ -5,12 +5,14 @@ import { Outlet } from 'react-router-dom'
 
 function MainLayout() {
     return (
-        <SidebarProvider className='w-screen'>
+        <SidebarProvider className='min-h-screen w-full overflow-hidden'>
             <SideMenuBar />
-            <main className='w-full bg-gray-100'>
+            <div className='relative flex flex-1 bg-gray-100'>
                 <Header />
-                <Outlet />
-            </main>
+                <main className='w-full mt-28'>
+                    <Outlet />
+                </main>
+            </div>
         </SidebarProvider>
     )
 }
