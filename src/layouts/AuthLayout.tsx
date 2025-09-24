@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom"
 
 export const AuthLayout = () =>{
   return (
-    <div className="min-h-screen flex">
+    <div className="max-h-screen min-h-screen flex">
       {/* Left side - Image */}
       <div className="hidden lg:flex lg:w-1/2 relative">
-        <img src={"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tdrpj4JlFdj6Fxaa9Atmkj2ivY0AIk.png"} alt="Student in classroom" className="w-full h-full object-cover" />
+        <img src={"../public/image.png"} alt="Student in classroom" className="w-full h-full object-cover" />
       </div>
 
       {/* Right side - Form */}
