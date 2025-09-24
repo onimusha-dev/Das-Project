@@ -10,9 +10,9 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 z-50 flex w-full justify-between items-center bg-white/75 backdrop-blur-lg shadow-xs">
-      <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5"/>
-      <div className="sticky right-0 flex items-center gap-2 mr-10 p-3">
+    <header className="sticky top-0 z-50 flex w-full justify-between items-center bg-white/75 backdrop-blur-lg shadow-xs px-2 sm:px-4">
+      <SidebarTrigger size={'icon'} className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-1 sm:ml-5"/>
+      <div className="flex items-center gap-2 sm:gap-3 mr-2 sm:mr-10 p-2 sm:p-3">
         <NavLink
           to={"/notifications"}
           className="relative pr-5 border-r-2 ">
