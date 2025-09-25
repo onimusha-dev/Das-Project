@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from "./ui/sidebar"
 import {
       MdDashboard,
@@ -17,10 +17,14 @@ const SideMenuBar = () => {
 
       return (
             <Sidebar>
-                  <SidebarHeader className="bg-blue-900">
-                        <h1>header</h1>
+                  <SidebarHeader className="bg-[#003366]">
+                        <div className="">
+                             <Link to={'/'}>
+                             <img src="logo.png" alt="" className="" />
+                             </Link>
+                        </div>
                   </SidebarHeader>
-                  <SidebarContent className="flex flex-col gap-0 bg-blue-900">
+                  <SidebarContent className="flex flex-col gap-0 bg-[#003366]">
                         {
                               [
                                     { icon: <MdDashboard size={24} />, title: "Overview", href: "/overview" },
@@ -46,7 +50,7 @@ const SideMenuBar = () => {
                               ))
                         }
                   </SidebarContent>
-                  <SidebarFooter className="bg-blue-900">
+                  <SidebarFooter className="bg-[#003366]">
                         <NavLink to="/settings"
                               className={`flex items-center gap-3 pl-10 py-5 border-t-1 border-white/15 text-white hover:text-white/75 `}
                         ><MdSettings size={24} /> Settings</NavLink>

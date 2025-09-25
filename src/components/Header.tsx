@@ -10,9 +10,12 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 flex flex-1 justify-between items-center bg-white shadow-xs">
-      <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5"/>
-      <div className="flex items-center gap-2 mr-10 p-3">
+    <>
+      <header className="fixed w-full py-5 z-10 bg-white/75 backdrop-blur-lg shadow-xs">
+        <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5" />
+      </header>
+
+      <div className="fixed top-0 z-20 right-0 flex items-center gap-2 mr-10 p-3">
         <NavLink
           to={"/notifications"}
           className="relative pr-5 border-r-2 ">
@@ -22,14 +25,14 @@ const Header = () => {
           </div>}
         </NavLink>
         <Popover>
-          <PopoverTrigger className="flex pl-5">
+          <PopoverTrigger className="flex pl-5 z-999">
             <Avatar className="w-15 h-15 border-3 border-green-500">fdd</Avatar>
             <div className="flex flex-col justify-center ml-3">
               <h3 className="font-bold">Oorja Munat ^</h3>
               <p className="text-xs text-gray-400 text-start">ADMIN</p>
             </div>
           </PopoverTrigger>
-          <PopoverContent className="flex flex-col w-fit">
+          <PopoverContent className="flex z-999 flex-col w-fit">
             <NavLink to="/user-directory"
               className={`flex items-center p-3 gap-5 border-b-1 border-black/15`}
             ><MdAccountCircle size={24} /> User Management</NavLink>
@@ -39,7 +42,7 @@ const Header = () => {
           </PopoverContent>
         </Popover>
       </div>
-    </header>
+    </>
   )
 }
 
