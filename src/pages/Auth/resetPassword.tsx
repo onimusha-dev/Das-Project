@@ -34,10 +34,10 @@ export default function ResetPasswordPage() {
     <div className="flex w-full">
 
       {/* Right side - Form */}
-      <div className="w-full flex items-center justify-center p-8 bg-gray-50">
+      <div className="w-full flex items-center justify-center py-8">
         <div className="w-full max-w-md space-y-6">
           <div className="space-y-2">
-            <h1 className="text-2xl font-semibold text-gray-900">Reset Password</h1>
+            <h1 className="text-3xl font-semibold text-gray-900">Reset Password</h1>
             <p className="text-gray-600">
               Make sure your new password is at least 8 characters and includes at least 6 different characters
             </p>

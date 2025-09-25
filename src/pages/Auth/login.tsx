@@ -20,15 +20,10 @@ export default function LoginPage() {
     return (<>
         <form onSubmit={handleSubmit} className="w-full space-y-4">
             <div className="space-y-2">
-                {true && (
-                    <NavLink to={'/'} className="text-blue-600 hover:text-blue-700 text-sm font-medium inline-block mb-4">
-                        Back
-                    </NavLink>
-                )}
-                <h1 className="text-2xl font-semibold text-gray-900">{"Log In to ETE"}</h1>
-                <p className="text-gray-600">{'Enter your login details to access your account.'}</p>
+                <h1 className="text-3xl font-semibold text-gray-900">Log In to ETE</h1>
+                <p className="text-gray-600">Enter your login details to access your account.</p>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 mt-8">
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700">
                     Email Address*
                 </Label>
@@ -39,13 +34,13 @@ export default function LoginPage() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="pl-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                        className="pl-10 bg-blue-500/5 rounded-[4px] border-gray-200 h-15 focus:border-blue-500 focus:ring-blue-500"
                         required
                     />
                 </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 mt-10">
                 <Label htmlFor="password" className="text-sm font-medium text-gray-700">
                     Password*
                 </Label>
@@ -56,7 +51,7 @@ export default function LoginPage() {
                         type={showPassword ? "text" : "password"}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="pl-10 pr-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                        className="pl-10 pr-10 h-15 bg-blue-500/5 rounded-[4px] border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                         required
                     />
                     <button
@@ -69,13 +64,13 @@ export default function LoginPage() {
                 </div>
             </div>
 
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium">
+            <Button type="submit" className="w-full text-xl font-semibold bg-blue-600 rounded-[4px] hover:bg-blue-700 text-white mt-8 py-3 h-15 ">
                 Login
             </Button>
         </form>
 
-        <div className="text-center">
-            <NavLink to="/auth/forgot-password" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+        <div className="text-center mt-10">
+            <NavLink to="/auth/forgot-password" className="flex justify-start text-xl underline pt-8 text-blue-600 hover:text-blue-700 border-t-1 font-medium">
                 Forgot password?
             </NavLink>
         </div>
