@@ -9,7 +9,7 @@ function MainLayout() {
             <SideMenuBar />
             <SidebarInset className='bg-gray-100'>
                 <Header />
-                <div className="flex-1 overflow-auto h-full">
+                <div className="flex-1 pt-20 overflow-auto h-full">
                   <Outlet />
                 </div>
             </SidebarInset>

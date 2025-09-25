@@ -25,6 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import AddNewCategoryForm from "./AddNewCategoryForm"
 
 
 const tableData = [
@@ -135,18 +136,10 @@ const CategoryPage = () => {
               + Add New Banner
             </Button>
           </SheetTrigger>
-          <SheetContent>
-            <SheetHeader className="p-10">
-              <SheetTitle className="text-2xl font-semibold">Add New Banner</SheetTitle>
+          <SheetContent className="overflow-y-scroll"> {/**w-[800px] sm:max-w-[800px]  */}
               <SheetDescription>
-                <form action="submit" className="select-none flex flex-col gap-3">
-                  <div>
-                    <label className="text-lg font-medium block my-3" htmlFor="name">Name *</label>
-                    <Input required type="text" id="name" name="name" placeholder="Enter the name" className="h-12 bg-blue-50 focus:outline-none focus:border-blue-600"></Input>
-                  </div>
-                </form>
+                <AddNewCategoryForm />
               </SheetDescription>
-            </SheetHeader>
           </SheetContent>
         </Sheet>
       </div>

@@ -26,6 +26,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import AddNewBannerForm from "./forms/AddNewBannerForm"
 
 
 
@@ -158,18 +159,8 @@ const HomePageBanners = () => {
                             + Add New Banner
                         </Button>
                     </SheetTrigger>
-                    <SheetContent>
-                        <SheetHeader className="p-10">
-                            <SheetTitle className="text-2xl font-semibold">Add New Banner</SheetTitle>
-                            <SheetDescription>
-                                <form action="submit" className="select-none flex flex-col gap-3">
-                                    <div>
-                                        <label className="text-lg font-medium block my-3" htmlFor="name">Name *</label>
-                                        <Input required type="text" id="name" name="name" placeholder="Enter the name" className="h-12 bg-blue-50 focus:outline-none focus:border-blue-600"></Input>
-                                    </div>
-                                </form>
-                            </SheetDescription>
-                        </SheetHeader>
+                    <SheetContent className="w-[500px] sm:max-w-[500px]">
+                            <AddNewBannerForm />
                     </SheetContent>
                 </Sheet>
             </div>
