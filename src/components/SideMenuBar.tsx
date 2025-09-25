@@ -17,7 +17,7 @@ const SideMenuBar = () => {
 
       return (
             <Sidebar>
-                  <SidebarHeader className="bg-[#003072]">
+                  <SidebarHeader className="bg-[#003072] pt-5">
                         <div className="">
                              <Link to={'/'}>
                              <img src="logo.png" alt="" className="" />

@@ -66,8 +66,8 @@ const Overview = () => {
         <div className="max-w-7xl mx-auto space-y-6">
           {/* Header Section - Total Downloads with Country Selector */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
-            <Card className="lg:col-span-1 p-5 rounded-xl shadow-none border-gray-100">
-              <CardHeader className="pb-2 px-0">
+            <Card className="lg:col-span-1 gap-1 p-5 rounded-xl shadow-none border-gray-100">
+              <CardHeader className="gap-0 px-0">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-sm font-medium text-gray-600">Total Downloads</CardTitle>
                   <Select value={selectedCountry} onValueChange={setSelectedCountry}>
@@ -87,20 +87,20 @@ const Overview = () => {
               <CardContent className="px-0">
                 <div className="text-3xl font-bold">{mockData.totalDownloads}</div>
                 <div className="flex items-center mt-2">
-                  <Badge variant="secondary" className="bg-green-100 text-green-800">
-                    <TrendingUp className="w-3 h-3 mr-1" />
-                    vs last month
+                  <Badge variant="secondary" className="bg-green-100 w-[55px] h-[27px] border border-[#26640074] text-green-800">
+                    {"10%"}
                   </Badge>
+                  <p className="text-xs pl-3">Than last month</p>
                 </div>
 
                 {/* Android/iOS Tabs */}
                 <Tabs defaultValue="android" className="mt-4">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="android">Android</TabsTrigger>
-                    <TabsTrigger value="ios">iOS</TabsTrigger>
+                  <TabsList className="grid w-full px-0 gap-2 bg-white grid-cols-2">
+                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="android">Android</TabsTrigger>
+                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="ios">iOS</TabsTrigger>
                   </TabsList>
                   <TabsContent value="android" className="space-y-3 mt-4">
-                    <div className="grid grid-cols-3 gap-2 text-center bg-blue-500/5 p-5 border rounded-[4px]">
+                    <div className="grid grid-cols-3 gap-2 text-center bg-[#023E8408] p-5 border rounded-[4px]">
                       <div>
                         <div className="text-xs text-gray-600">Total Users</div>
                         <div className="font-semibold">{mockData.metrics.totalUsers}</div>
@@ -115,18 +115,18 @@ const Overview = () => {
                       </div>
                     </div>
                   </TabsContent>
-                  <TabsContent value="ios" className="space-y-3 mt-4 bg-blue-500/5 ">
-                    <div className="grid grid-cols-3 gap-2 text-center">
+                  <TabsContent value="ios" className="space-y-3 mt-4 ">
+                    <div className="grid grid-cols-3 gap-2 text-center bg-[#023E8408] p-5 border rounded-[4px]">
                       <div>
-                        <div className="text-sm text-gray-600">Total Users</div>
+                        <div className="text-xs text-gray-600">Total Users</div>
                         <div className="font-semibold">{mockData.metrics.totalUsers}</div>
                       </div>
-                      <div>
-                        <div className="text-sm text-gray-600">Active Users</div>
+                      <div className="px-3 border-x">
+                        <div className="text-xs text-gray-600">Active Users</div>
                         <div className="font-semibold">{mockData.metrics.activeUsers}</div>
                       </div>
                       <div>
-                        <div className="text-sm text-gray-600">PDF Views</div>
+                        <div className="text-xs text-gray-600">PDF Views</div>
                         <div className="font-semibold">{mockData.metrics.pdfViews}</div>
                       </div>
                     </div>
