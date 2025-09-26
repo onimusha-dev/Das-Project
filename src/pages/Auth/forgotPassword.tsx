@@ -49,7 +49,7 @@ export default function ForgotPasswordPage() {
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 h-16 hover:bg-blue-700 text-white py-3 rounded-[4px] font-medium"
+              className="w-full bg-[#023E84] hover:bg-[#023E84] h-16 text-white py-3 rounded-[4px] font-medium"
             >
               Request Password Reset
             </Button>

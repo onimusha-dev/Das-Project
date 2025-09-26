@@ -6,6 +6,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, Users, FileText, MessageSquare, Heart } from "lucide-react"
+import { RecentlyAddedResourcesTable } from "@/sections/overView/RecentlyAddedResourcesTable"
+import { UsersGeography } from "@/sections/overView/UsersGeography"
 // import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts"
 
 // Mock data
@@ -32,20 +34,7 @@ const mockData = {
       image: "image.png",
     },
   ],
-  recentResources: [
-    { title: "HINDI", category: "ACTIVITY", views: 1, downloads: 1 },
-    { title: "HINDI", category: "ACTIVITY", views: 3, downloads: 3 },
-    { title: "HINDI", category: "LIBRARY", views: 32, downloads: 29 },
-    { title: "HINDI", category: "LIBRARY", views: 362, downloads: 362 },
-    { title: "HINDI", category: "LIBRARY", views: 245, downloads: 245 },
-  ],
-  topCountries: [
-    { country: "Country 1", flag: "🇺🇸", count: 123 },
-    { country: "Country 2", flag: "🇮🇳", count: 98 },
-    { country: "Country 3", flag: "🇬🇧", count: 76 },
-    { country: "Country 4", flag: "🇨🇦", count: 53 },
-    { country: "Country 5", flag: "🇦🇺", count: 42 },
-  ],
+
 }
 
 const Overview = () => {
@@ -55,7 +44,7 @@ const Overview = () => {
   return (
     <section className="px-8 my-10">
       <div className="min-h-screen">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           <h2 className="text-3xl font-semibold pb-5">
             Good Evening, Oorja Mount
           </h2>
@@ -63,16 +52,16 @@ const Overview = () => {
             Wellcome Back Oorja Mount
           </p>
         </div>
-        <div className="max-w-7xl mx-auto space-y-6">
+        <div className="space-y-6">
           {/* Header Section - Total Downloads with Country Selector */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
             <Card className="lg:col-span-1 gap-1 p-5 rounded-xl shadow-none border-gray-100">
               <CardHeader className="gap-0 px-0">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-gray-600">Total Downloads</CardTitle>
+                  <CardTitle className="text-sm font-medium ">Total Downloads</CardTitle>
                   <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                    <SelectTrigger className="w-24 h-8">
-                      <SelectValue />
+                    <SelectTrigger className="w-24 h-8 bg-[#F7F9FB]">
+                      <SelectValue/>
                     </SelectTrigger>
                     <SelectContent>
                       {mockData.countries.map((country) => (
@@ -96,37 +85,37 @@ const Overview = () => {
                 {/* Android/iOS Tabs */}
                 <Tabs defaultValue="android" className="mt-4">
                   <TabsList className="grid w-full px-0 gap-2 bg-white grid-cols-2">
-                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="android">Android</TabsTrigger>
-                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="ios">iOS</TabsTrigger>
+                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] border border-[#023E8440] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="android">Android</TabsTrigger>
+                    <TabsTrigger className="px-5 py-3 text-xs rounded-[4px] border border-[#023E8440] data-[state=active]:bg-[#023E84] data-[state=active]:text-white" value="ios">iOS</TabsTrigger>
                   </TabsList>
                   <TabsContent value="android" className="space-y-3 mt-4">
-                    <div className="grid grid-cols-3 gap-2 text-center bg-[#023E8408] p-5 border rounded-[4px]">
+                    <div className="grid grid-cols-3 text-center bg-[#023E8408] py-5 px-3 border border-[#023E8440] rounded-[4px]">
                       <div>
-                        <div className="text-xs text-gray-600">Total Users</div>
+                        <div className="text-xs ">Total Users</div>
                         <div className="font-semibold">{mockData.metrics.totalUsers}</div>
                       </div>
-                      <div className="px-3 border-x">
-                        <div className="text-xs text-gray-600">Active Users</div>
+                      <div className="border-x">
+                        <div className="text-xs ">Active Users</div>
                         <div className="font-semibold">{mockData.metrics.activeUsers}</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">PDF Views</div>
+                        <div className="text-xs ">PDF Views</div>
                         <div className="font-semibold">{mockData.metrics.pdfViews}</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="ios" className="space-y-3 mt-4 ">
-                    <div className="grid grid-cols-3 gap-2 text-center bg-[#023E8408] p-5 border rounded-[4px]">
+                    <div className="grid grid-cols-3 text-center bg-[#023E8408] px-3 py-5 border border-[#023E8440] rounded-[4px]">
                       <div>
-                        <div className="text-xs text-gray-600">Total Users</div>
+                        <div className="text-xs ">Total Users</div>
                         <div className="font-semibold">{mockData.metrics.totalUsers}</div>
                       </div>
-                      <div className="px-3 border-x">
-                        <div className="text-xs text-gray-600">Active Users</div>
+                      <div className="border-x">
+                        <div className="text-xs ">Active Users</div>
                         <div className="font-semibold">{mockData.metrics.activeUsers}</div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-600">PDF Views</div>
+                        <div className="text-xs ">PDF Views</div>
                         <div className="font-semibold">{mockData.metrics.pdfViews}</div>
                       </div>
                     </div>
@@ -136,12 +125,12 @@ const Overview = () => {
             </Card>
 
             {/* Small Metric Cards */}
-            <div className="lg:col-span-2 grid grid-cols-2 p-5 gap-4 bg-white border border-gray-100 rounded-lg">
+            <div className="lg:col-span-1 grid grid-cols-2 p-5 gap-4 bg-white border border-gray-100 rounded-lg">
               <Card className="bg-[#023E8408] rounded-[4px]">
                 <CardContent className="px-4 py-6 flex-1">
                   <div className="flex items-center h-full justify-between">
                     <div className="h-full flex-1 flex flex-col justify-between">
-                      <div className="text-sm text-gray-600">Total Downloads</div>
+                      <div className="text-sm ">Total Downloads</div>
                       <div className="text-2xl flex justify-between  font-bold">{mockData.metrics.totalDownloads}
                         <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                           <FileText className="w-4 h-4 text-[#023E84]" />
@@ -155,7 +144,7 @@ const Overview = () => {
                 <CardContent className="px-4 py-6 flex-1">
                   <div className="flex items-center h-full justify-between ">
                     <div className="h-full flex-1 flex flex-col justify-between">
-                      <div className="text-sm text-gray-600">Total Bookmarks</div>
+                      <div className="text-sm ">Total Bookmarks</div>
                       <div className="text-2xl flex justify-between font-bold">{mockData.metrics.totalBookmarks}
                         <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                           <Heart className="w-4 h-4 text-[#023E84]" />
@@ -170,7 +159,7 @@ const Overview = () => {
                 <CardContent className="p-px-4 py-6 flex-1">
                   <div className="flex items-center h-full justify-between">
                     <div className="h-full flex-1 flex flex-col justify-between">
-                      <div className="text-sm text-gray-600">Feedback Received</div>
+                      <div className="text-sm ">Feedback Received</div>
                       <div className="text-2xl flex justify-between  font-bold">{mockData.metrics.feedbackReceived}
                         <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                           <MessageSquare className="w-4 h-4 text-[#023E84]" />
@@ -185,7 +174,7 @@ const Overview = () => {
                 <CardContent className="p-px-4 py-6 flex-1">
                   <div className="flex items-center h-full justify-between">
                     <div className="h-full flex-1 flex flex-col justify-between">
-                      <div className="text-sm text-gray-600">Volunteers</div>
+                      <div className="text-sm ">Volunteers</div>
                       <div className="text-2xl flex justify-between  font-bold">{mockData.metrics.volunteers}
                         <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                           <Users className="w-4 h-4 text-[#023E84]" />
@@ -198,17 +187,17 @@ const Overview = () => {
             </div>
 
             {/* App Banners Carousel */}
-            <Card className="lg:col-span-1 rounded-xl border-gray-100">
+            <Card className="lg:col-span-1 rounded-xl border-gray-100 py-5">
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-gray-600">App Banners</CardTitle>
+                  <CardTitle className="text-xl font-medium">App Banners</CardTitle>
                   <Button variant="ghost" size="sm" className="text-[#023E84]">
                     View
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent>
-                <div className="relative">
+              <CardContent className="h-full">
+                <div className="relative h-full">
                   <img
                     src="/placeholder.svg?height=120&width=200"
                     alt="App Banner"
@@ -225,75 +214,9 @@ const Overview = () => {
           </div>
 
           {/* Bottom Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Recently Added Resources Table */}
-            <Card className="lg:col-span-2">
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg font-semibold">Recently Added Resources</CardTitle>
-                  <Button variant="ghost" size="sm" className="text-[#023E84]">
-                    View All
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Title</TableHead>
-                      <TableHead>Category</TableHead>
-                      <TableHead>Views</TableHead>
-                      <TableHead>Downloads</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {mockData.recentResources.map((resource, index) => (
-                      <TableRow key={index}>
-                        <TableCell className="font-medium">{resource.title}</TableCell>
-                        <TableCell>
-                          <Badge variant="outline">{resource.category}</Badge>
-                        </TableCell>
-                        <TableCell>{resource.views}</TableCell>
-                        <TableCell>{resource.downloads}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-
-            {/* Users Geography */}
-            <Card>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg font-semibold">Users Geography</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {/* World Map Placeholder */}
-                <div className="mb-4">
-                  <img
-                    src="/placeholder.svg?height=120&width=280"
-                    alt="World Map"
-                    className="w-full h-24 object-cover rounded-lg bg-gray-100"
-                  />
-                </div>
-
-                {/* Top Countries */}
-                <div>
-                  <h4 className="text-sm font-medium text-gray-600 mb-3">Top Countries</h4>
-                  <div className="space-y-2">
-                    {mockData.topCountries.map((country, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-lg">{country.flag}</span>
-                          <span className="text-sm">{country.country}</span>
-                        </div>
-                        <span className="text-sm font-medium">{country.count}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+            <RecentlyAddedResourcesTable/>
+            <UsersGeography />
           </div>
         </div>
       </div>

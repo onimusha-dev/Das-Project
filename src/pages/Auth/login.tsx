@@ -64,13 +64,13 @@ export default function LoginPage() {
                 </div>
             </div>
 
-            <Button type="submit" className="w-full text-xl font-semibold bg-blue-600 rounded-[4px] hover:bg-blue-700 text-white mt-8 py-3 h-15 ">
+            <Button type="submit" className="w-full text-xl font-semibold hover:bg-[#023E84] bg-[#023E84] rounded-[4px] text-white mt-8 py-3 h-15 ">
                 Login
             </Button>
         </form>
 
         <div className="text-center mt-10">
-            <NavLink to="/auth/forgot-password" className="flex justify-start text-xl underline pt-8 text-blue-600 hover:text-blue-700 border-t-1 font-medium">
+            <NavLink to="/auth/forgot-password" className="flex justify-start text-xl underline pt-8 text-[#023E84] border-t-1 font-medium">
                 Forgot password?
             </NavLink>
         </div>
