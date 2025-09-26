@@ -20,17 +20,17 @@ export default function ForgotPasswordPage() {
     <div className="flex w-full">
 
       {/* Right side - Form */}
-      <div className="w-full lg:w flex items-center justify-center p-8 bg-gray-50">
+      <div className="w-full flex items-center justify-center py-8">
         <div className="w-full max-w-md space-y-6">
           <div className="space-y-2">
-            <h1 className="text-2xl font-semibold text-gray-900">Forgot password?</h1>
+            <h1 className="text-3xl font-semibold text-gray-900">Forgot password?</h1>
             <p className="text-gray-600">
               Provide the email address affiliated with your account, and we'll send you a link to reset your password.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-4 gap-24 flex flex-col">
+            <div className="space-y-2 mt-6">
               <Label htmlFor="email" className="text-sm font-medium text-gray-700">
                 Email Address*
               </Label>
@@ -41,7 +41,7 @@ export default function ForgotPasswordPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                  className="pl-10 bg-blue-500/5 h-16 rounded-[4px] border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   required
                 />
               </div>
@@ -49,14 +49,14 @@ export default function ForgotPasswordPage() {
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium"
+              className="w-full bg-[#023E84] hover:bg-[#023E84] h-16 text-white py-3 rounded-[4px] font-medium"
             >
               Request Password Reset
             </Button>
           </form>
 
           {isSubmitted && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+            <div className="bg-green-50 border rounded-[4px] h-15 border-green-200 py-4 px-2 flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
               <p className="text-sm text-green-800">We've sent a link to your email to reset your password.</p>
             </div>

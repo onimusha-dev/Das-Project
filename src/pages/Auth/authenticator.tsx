@@ -55,20 +55,20 @@ export default function AuthPage() {
     <div className="flex w-full">
 
       {/* Right side - Form */}
-      <div className="w-full flex items-center justify-center p-8 bg-gray-50">
+      <div className="w-full flex items-center justify-center py-8 ">
         <div className="w-full max-w-md space-y-6">
           <div className="space-y-2">
-            <NavLink to="/auth/login" className="text-blue-600 hover:text-blue-700 text-sm font-medium inline-block mb-4">
+            <NavLink to="/auth/login" className="text-[#023E84] text-sm font-medium inline-block mb-2 underline">
               Back
             </NavLink>
-            <h1 className="text-2xl font-semibold text-gray-900">Authenticate your account</h1>
+            <h1 className="text-3xl font-semibold text-gray-900">Authenticate your account</h1>
             <p className="text-gray-600">
               We've emailed you a code to <span className="font-medium">xyz@outlook.com</span>. Enter it in the space
               below.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 mt-10">
             <div className="space-y-2">
               <Label className="text-sm font-medium text-gray-700">6-digit code*</Label>
               <div className="flex gap-2">
@@ -80,7 +80,7 @@ export default function AuthPage() {
                     value={digit}
                     onChange={(e) => handleCodeChange(index, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
-                    className="w-12 h-12 text-center text-lg font-medium bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                    className="w-16 h-16 text-center text-3xl bg-blue-500/5 rounded-[4px] font-medium border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     maxLength={1}
                   />
                 ))}
@@ -89,15 +89,15 @@ export default function AuthPage() {
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium"
+              className="w-full mt-15 bg-[#023E84] hover:bg-[#023E84] text-white py-3 h-16 text-xl font-semibold rounded-[4px]"
             >
               Verify Code
             </Button>
           </form>
 
-          <div className="text-center">
-            <p className="text-sm text-gray-600">
-              Request new OTP again in <span className="text-blue-600 font-medium">{formatTime(countdown)}</span>
+          <div className="text-center mt-10 pt-8 border-t">
+            <p className="text-sm text-[#023E84] font-semibold ">
+              Request new OTP again in <span className="font-medium">{formatTime(countdown)}</span>
             </p>
           </div>
         </div>

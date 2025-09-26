@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed w-full py-5 z-10 bg-white/75 backdrop-blur-lg shadow-xs">
-        <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 hover:bg-black/10 ml-5" />
+        <SidebarTrigger size={'icon'} className="w-12 h-12 rounded-2xl bg-black/5 md:invisible hover:bg-black/10 ml-5" />
       </header>
 
       <div className="fixed top-0 z-20 right-0 flex items-center gap-2 mr-10 p-3">

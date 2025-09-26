@@ -7,7 +7,7 @@ function MainLayout() {
     return (
         <SidebarProvider className='min-h-screen w-full overflow-hidden'>
             <SideMenuBar />
-            <SidebarInset className='bg-gray-100'>
+            <SidebarInset className='bg-[#F7F9FB]'>
                 <Header />
                 <div className="flex-1 pt-20 overflow-auto h-full">
                   <Outlet />
